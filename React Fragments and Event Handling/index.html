@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <!-- Creating a div with id 'root' for React to render into -->
+    <div id="root"></div>
+    <!-- Including React and ReactDOM libraries -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <!-- Including Babel for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Beginning of JavaScript code -->
+    <script type="text/babel">
+      // Your JSX code here
+     
+      // Defining a function to display an alert
+      function alertHello(){
+         alert("Hello");
+      }
+
+      // Creating JSX content
+      let content = <React.Fragment>
+        {/* Creating a div with class 'main' and center alignment */}
+        <div className={"main"} style={{textAlign: "center"}}>
+            {/* Adding a paragraph with customized font size and weight */}
+            <p style={{fontSize:"32px", fontWeight: "bolder"}}>React is a javascript library</p>
+            {/* Adding another paragraph with a message */}
+            <p>Click the below button to alert 'Hello'</p>
+            {/* Creating a button with specified styles and onClick event */}
+            <button style={{height: "5vh", width: "10vw", backgroundColor:"crimson", color:"white"}} onClick={alertHello}>Click Me</button>
+        </div>
+      </React.Fragment>;
+
+      // Rendering the JSX content to the root element
+      let rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      rootElement.render(content);
+
+    </script>
+    <!-- End of JavaScript code -->
+  </body>
+</html>
